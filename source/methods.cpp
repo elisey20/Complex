@@ -1,5 +1,5 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 #include "structs.h"
 
 Complex operator + (const Complex& num1, const Complex& num2)
