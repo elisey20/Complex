@@ -5,7 +5,7 @@
 int main()
 {
     Complex num1 = {2, 3};
-    Complex num2 = {5, 10};
+    Complex num2 = {0, 0};
 
     Complex num3 = num1 / num2;
 

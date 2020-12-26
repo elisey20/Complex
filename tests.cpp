@@ -46,6 +46,13 @@ TEST(Complex, t5)
     EXPECT_TRUE(exp == res);
 }
 
+TEST(Complex, t6)
+{
+    Complex num1 = {3, 4};
+    Complex num2 = {0, 0};
+    EXPECT_THROW(num1 / num2, std::logic_error);
+}
+
 int main(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);

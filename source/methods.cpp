@@ -32,18 +32,20 @@ Complex operator * (const Complex& num1, const Complex& num2)
     Complex res;
     res.real = num1.real * num2.real - num1.imaginary * num2.imaginary;
     res.imaginary = num1.real * num2.imaginary + num1.imaginary * num2.real;
-    res.real = round(res.real * 100) / 100;
-    res.imaginary = round(res.imaginary * 100) / 100;
+    res.real = std::round(res.real * 100) / 100;
+    res.imaginary = std::round(res.imaginary * 100) / 100;
     return res;
 }
 
 Complex operator / (const Complex& num1, const Complex& num2)
 {
+    if (num2.real == 0 && num2.imaginary == 0)
+        throw std::logic_error("Division by zero");
     Complex res;
     res.real = (num1.real * num2.real + num1.imaginary * num2.imaginary) / (num2.real * num2.real + num2.imaginary * num2.imaginary);
     res.imaginary = (num2.real * num1.imaginary - num2.imaginary * num1.real) / (num2.real * num2.real + num2.imaginary * num2.imaginary);
-    res.real = round(res.real * 100) / 100;
-    res.imaginary = round(res.imaginary * 100) / 100;
+    res.real = std::round(res.real * 100) / 100;
+    res.imaginary = std::round(res.imaginary * 100) / 100;
     return res;
 }
 
